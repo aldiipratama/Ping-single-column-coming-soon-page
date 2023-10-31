@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <link rel="stylesheet" href="output.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-['Libre_Franklin']">
+    <div class="container flex flex-col items-center my-10 gap-10 w-[500px]">
+      <img src="./images/logo.svg" alt="logo" />
+      <h2 class="text-4xl font-semibold text-slate-500">
+        We are launching <span class="text-black font-bold">soon!</span>
+      </h2>
+      <p class="text-lg font-light">Subscribe and get notified</p>
+      <form
+        action=""
+        name="form"
+        class="flex flex-col gap-5 w-96 lg:flex-row lg:w-full"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email address..."
+          class="border border-slate-500 py-3 px-5 rounded-full lg:w-full focus:outline-slate-500"
+        />
+        <input
+          type="submit"
+          value="Notify Me"
+          name="submit"
+          onclick="validation(document.forms['form'])"
+          class="bg-blue-600 py-3 rounded-full text-white shadow-sm lg:w-40 cursor-pointer"
+        />
+      </form>
+      <img
+        src="./images/illustration-dashboard.png"
+        alt="illustration-dashboard"
+        class="my-16"
+      />
+      <div class="text-blue-600">
+        <a href="#" class="border border-blue-400 rounded-full py-4 px-5"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a href="#" class="border border-blue-400 rounded-full py-4 px-4 mx-5"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="#" class="border border-blue-400 rounded-full py-4 px-[18px]"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+      <p class="text-slate-500">&copy; Copyright Ping. All rights reserved.</p>
+    </div>
+
+    <footer>
+      <p class="text-center">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="relative inline-block before:absolute before:block before:-skew-y-3 before:-inset-1 before:bg-blue-500 ms-1"
+          ><span class="relative text-white">Frontend Mentor</span></a
+        >. Coded with ♥ by
+        <a
+          href="https://instagram.com/alx.dyy"
+          class="relative inline-block before:absolute before:block before:-skew-y-3 before:-inset-1 before:bg-blue-500 ms-1"
+          ><span class="relative text-white">aldiipratama</span></a
+        >.
+      </p>
+    </footer>
+
+    <script>
+      const validation = (inputText) => {
+        let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (inputText["email"].value.match(mailFormat)) {
+          alert("Valid email address!");
+          return true;
+        } else {
+          alert("You have entered an invalid email address!");
+          return false;
+        }
+      };
+    </script>
+  </body>
+</html>
